@@ -18,6 +18,11 @@ class PostDetailView(DetailView):
     slug_url_kwarg = 'post_slug'
 
 
-
 def home(request):
     return render(request, 'base.html')
+
+
+class HomeView(ListView):
+    model = Post
+    paginate_by = 6
+    template_name = ''
