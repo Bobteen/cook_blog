@@ -51,7 +51,7 @@ class Post(models.Model):
         related_name='post'
     )
     created_at = models.DateTimeField(auto_now_add=True)
-    slug = models.SlugField(max_length=200, default=True)
+    slug = models.SlugField(max_length=200, unique=True, default='')
 
     def __str__(self):
         return self.title
